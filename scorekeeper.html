@@ -14,11 +14,17 @@
       {{> player}}
     {{/each}}
   </div>
+      <input type="button" id="insert" value="Add Player">
+
 
   {{#if selected_name}}
   <div class="details">
     <div class="name">{{selected_name}}</div>
-    <input type="button" class="inc" value="Give 5 points" />
+    <input type="button" class="inc3" value="Add 3 points" />
+    <input type="button" class="inc1" value="Add 1 points" />
+  </div>
+  <div>
+    <input type="button" class="reset" value="Reset Score" />
   </div>
   {{else}}
   <div class="none">Click a player to select</div>
