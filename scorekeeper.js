@@ -18,14 +18,17 @@ if (Meteor.isClient) {
   };
 
   Template.leaderboard.events({
-    'click input.inc3': function () {
+    'click input#inc3': function () {
       Players.update(Session.get("selected_player"), {$inc: {score: 3}});
     },
-    'click input.inc1': function () {
+    'click input#inc1': function () {
     Players.update(Session.get("selected_player"), {$inc: {score: 1}});
     },
-    'click input.reset': function () {
-    Players.update(Session.get("selected_player"), {score: 0});
+    'click #dec1': function () {
+    Players.update(Session.get("selected_player"), {$inc: {score: -1}});
+    },
+     'click input#delete': function () {
+      Players.remove(Session.get("selected_player"));
     },
       'click #insert': function () {
       var n = $("input[name=name]").val();
@@ -35,6 +38,23 @@ if (Meteor.isClient) {
       }
       // return false so the page will not reload
       return false;
+    },
+      'click #resetall': function () {
+      // get all players
+      var players = Players.find({}).fetch();
+
+      // clear all players
+      for (var i = 0; i < players.length; i++)
+      {
+        Players.remove(players[i]._id);
+      }
+
+      // Re-insert players with new scores
+      for (var i = 0; i < players.length; i++)
+      {
+        var player = {name: players[i].name, score: 0};
+        Players.insert(player);
+      }
     },
   });
 

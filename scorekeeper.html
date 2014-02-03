@@ -14,17 +14,22 @@
       {{> player}}
     {{/each}}
   </div>
-      <input type="button" id="insert" value="Add Player">
+  <form class="form-horizontal">
+    <input type="text" name="name" placeholder="Add New Player">
+    <button id="insert" class="btn btn-success">Insert</button>
+  </form>
+  <button class="btn" id="resetall">Reset Scores</button>
 
 
   {{#if selected_name}}
   <div class="details">
     <div class="name">{{selected_name}}</div>
-    <input type="button" class="inc3" value="Add 3 points" />
-    <input type="button" class="inc1" value="Add 1 points" />
+    <input type="button" id="inc3" value="Add 3 points" />
+    <input type="button" id="inc1" value="Add 1 points" />
+    <button id="dec1" class="btn btn-warning">Subtract 1 point</button>
   </div>
   <div>
-    <input type="button" class="reset" value="Reset Score" />
+    <input type="button" id="delete" value="Delete Player" />
   </div>
   {{else}}
   <div class="none">Click a player to select</div>
