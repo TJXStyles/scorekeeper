@@ -3,42 +3,81 @@
 </head>
 
 <body>
+
+	<nav class="nav navbar-fixed-top">
+
+	</nav>
+
+
   <div id="outer">
     {{> leaderboard}}
   </div>
+
+  <footer class="container">
+  	<hr>
+  	<p>Big Two Score keeper | Made by Jack Cooc</p>
+  </footer>
 </body>
 
 <template name="leaderboard">
-  <div class="leaderboard">
-    {{#each players}}
-      {{> player}}
-    {{/each}}
+
+<div class="row">
+	<div class="span4">
+
+		<div class="well">
+			<form class="form-horizontal">
+    		<input type="text" name="name" placeholder="Add New Player">
+    		<button id="insert" class="btn btn-success">Insert</button>
+  		</form>
+  		<button class="btn" id="resetall">Reset Scores</button></div>
+	</div>
+
+	<div class="span8">
+    <table id="leaderboard" class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+        <tr>
+      </thead>
+        {{#each players}}
+          {{> player}}
+        {{/each}}
+    </table>
   </div>
-  <form class="form-horizontal">
-    <input type="text" name="name" placeholder="Add New Player">
-    <button id="insert" class="btn btn-success">Insert</button>
-  </form>
-  <button class="btn" id="resetall">Reset Scores</button>
+</div>
 
 
-  {{#if selected_name}}
+<div class="well">  {{#if selected_name}}
   <div class="details">
-    <div class="name">{{selected_name}}</div>
-    <input type="button" id="inc3" value="Add 3 points" />
-    <input type="button" id="inc1" value="Add 1 points" />
-    <button id="dec1" class="btn btn-warning">Subtract 1 point</button>
+  	<h2><div class="name">{{selected_name}}
+  		<button class="btn btn-danger pull-right" id="delete">
+  			Delete
+  		</button></h2>
   </div>
-  <div>
-    <input type="button" id="delete" value="Delete Player" />
-  </div>
+    <p>Did this player lose?</p></div>
+
+<div class="span4">
+	<div class="well">
+
+		<p class="penalty">All cards left <button id="dec4" class=" pull-right btn btn-danger">4x points</button></p>
+	  <p class="penalty">10 - 12 Cards left <button id="dec3" class="pull-right btn btn-warning">3x Points</button>
+	  </p>
+		<p class="penalty">8 - 9 Cards left <button id="dec2" class="pull-right btn btn-primary">2x Points</button>
+	  <p class="penalty">1 - 9 cards left <button id="dec1" class="pull-right btn btn-info">1 Point</button></p>
+	  <button id="dec1" class="btn btn-success">Add 1 point</button>
+
+	</div>
+</div>
+
+
   {{else}}
   <div class="none">Click a player to select</div>
   {{/if}}
 </template>
 
 <template name="player">
-  <div class="player {{selected}}">
-    <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span>
-  </div>
-</template>
+  <tr class="{{selected}}">
+    <td><span class="lead">{{name}}</span></td>
+    <td><h4>{{score}}</h4></td>
+  </tr></template>

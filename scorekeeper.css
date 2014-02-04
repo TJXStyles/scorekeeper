@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+.penalty {
+	padding: 10px;
+}
+
+footer {
+	clear: both;
+}

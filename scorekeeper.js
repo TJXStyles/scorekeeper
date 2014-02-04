@@ -18,16 +18,19 @@ if (Meteor.isClient) {
   };
 
   Template.leaderboard.events({
-    'click input#inc3': function () {
-      Players.update(Session.get("selected_player"), {$inc: {score: 3}});
+    'click #dec4': function () {
+      Players.update(Session.get("selected_player"), {$inc: {score: -4}});
     },
-    'click input#inc1': function () {
-    Players.update(Session.get("selected_player"), {$inc: {score: 1}});
+    'click #dec3': function () {
+      Players.update(Session.get("selected_player"), {$inc: {score: -3}});
+    },
+    'click #dec2': function () {
+    Players.update(Session.get("selected_player"), {$inc: {score: -2}});
     },
     'click #dec1': function () {
     Players.update(Session.get("selected_player"), {$inc: {score: -1}});
     },
-     'click input#delete': function () {
+     'click #delete': function () {
       Players.remove(Session.get("selected_player"));
     },
       'click #insert': function () {
