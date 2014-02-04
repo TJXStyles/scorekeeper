@@ -5,7 +5,7 @@
 
 <body>
 
-	<div class="navbar">
+<!-- 	<div class="navbar">
 		<div class="navbar-inner">
 			<a class="brand" href="#">Scorekeeper</a>
 			<ul class="nav" role="menu" aria-labelledby="dropdownMenu">
@@ -15,7 +15,36 @@
 				<li><a href="#">Gin Rummy</a></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Scorekeeper</a>
+
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+
+			<ul class="nav" role="menu" aria-labelledby="dropdownMenu">
+      	<li class="active"> <a href="#">Big Two</a></li>
+				<li><a href="#">Hearts</a></li>
+				<li><a href="#">Crazy Eights</a></li>
+				<li><a href="#">Gin Rummy</a></li></ul>
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 
 
   <div id="outer">
@@ -66,7 +95,7 @@
   </div>
     <p>Did this player lose?</p></div>
 
-<div class="span4">
+<div class="span5">
 	<div class="well">
 
 		<p class="penalty">All cards left <button id="dec4" class=" pull-right btn btn-danger">4x points</button></p>

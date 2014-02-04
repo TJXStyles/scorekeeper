@@ -45,17 +45,18 @@ if (Meteor.isClient) {
       // return false so the page will not reload
       return false;
     },
+    //Resets all scores - 3 steps:
       'click #resetall': function () {
-      // get all players
+      // 1. get all players
       var players = Players.find({}).fetch();
 
-      // clear all players
+      // 2. clear all players
       for (var i = 0; i < players.length; i++)
       {
         Players.remove(players[i]._id);
       }
 
-      // Re-insert players with new scores
+      // 3. Re-insert players with 0 score
       for (var i = 0; i < players.length; i++)
       {
         var player = {name: players[i].name, score: 0};
