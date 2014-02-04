@@ -12,4 +12,4 @@ Click the subtract button for each card that person has left by the end of the g
 8, or 9 cards left - 2x points
 1 - 9 cards left - 1x
 
-Read the rules here: [http://en.wikipedia.org/wiki/Big_Two][http://en.wikipedia.org/wiki/Big_Two]
+Read the rules here: <http://en.wikipedia.org/wiki/Big_Two>
