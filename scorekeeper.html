@@ -1,12 +1,21 @@
 <head>
-  <title>Leaderboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leaderboard</title>
 </head>
 
 <body>
 
-	<nav class="nav navbar-fixed-top">
-
-	</nav>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="#">Scorekeeper</a>
+			<ul class="nav" role="menu" aria-labelledby="dropdownMenu">
+				<li class="active"> <a href="#">Big Two</a></li>
+				<li><a href="#">Hearts</a></li>
+				<li><a href="#">Crazy Eights</a></li>
+				<li><a href="#">Gin Rummy</a></li>
+			</ul>
+		</div>
+	</div>
 
 
   <div id="outer">
@@ -15,14 +24,14 @@
 
   <footer class="container">
   	<hr>
-  	<p>Big Two Score keeper | Made by Jack Cooc</p>
+  	<p>Card game Scorekeeper | Made by Jack Cooc</p>
   </footer>
 </body>
 
 <template name="leaderboard">
 
 <div class="row">
-	<div class="span4">
+	<div class="span5">
 
 		<div class="well">
 			<form class="form-horizontal">
@@ -32,7 +41,7 @@
   		<button class="btn" id="resetall">Reset Scores</button></div>
 	</div>
 
-	<div class="span8">
+	<div class="span7">
     <table id="leaderboard" class="table table-hover">
       <thead>
         <tr>
@@ -65,7 +74,7 @@
 	  </p>
 		<p class="penalty">8 - 9 Cards left <button id="dec2" class="pull-right btn btn-primary">2x Points</button>
 	  <p class="penalty">1 - 9 cards left <button id="dec1" class="pull-right btn btn-info">1 Point</button></p>
-	  <button id="dec1" class="btn btn-success">Add 1 point</button>
+	  <button id="add1" class="btn btn-success">Add 1 point</button>
 
 	</div>
 </div>

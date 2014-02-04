@@ -30,6 +30,9 @@ if (Meteor.isClient) {
     'click #dec1': function () {
     Players.update(Session.get("selected_player"), {$inc: {score: -1}});
     },
+    'click #add1': function () {
+    Players.update(Session.get("selected_player"), {$inc: {score: 1}});
+    },
      'click #delete': function () {
       Players.remove(Session.get("selected_player"));
     },
